@@ -10,7 +10,7 @@ public class Matrix {
 	
 ///Method Of thread class for 1st row Multiplication 
 	
-	static Thread t1 = new Thread(new Runnable() {
+	static Thread row1 = new Thread(new Runnable() {
 		public void run() {
 			for (int j = 0; j < 3; j++) {
 				for (int i = 0; i < 3; i++) {
@@ -22,7 +22,7 @@ public class Matrix {
 	
 /// Method Of thread class for 2nd row Multiplication 
 	
-	static Thread t2 = new Thread(new Runnable() {
+	static Thread row2 = new Thread(new Runnable() {
 		public void run() {
 			for (int j = 0; j < 3; j++) {
 				for (int i = 0; i < 3; i++) {
@@ -34,7 +34,7 @@ public class Matrix {
 	
 	/// Method Of thread class for 3rd row Multiplication 
 	
-	static Thread t3 = new Thread(new Runnable() {
+	static Thread row3 = new Thread(new Runnable() {
 		public void run() {
 			for (int j = 0; j < 3; j++) {
 				for (int i = 0; i < 3; i++) {
@@ -47,9 +47,9 @@ public class Matrix {
 	//A method for starting The Threads 
 	
     static void Do(){
-    	t1.start();   
-    	t2.start();	   
-    	t3.start();    
+    	row1.start();   
+    	row2.start();	   
+    	row3.start();    
     	}
     
     //Main function;
@@ -81,9 +81,9 @@ public class Matrix {
 		///Joining the thread
 		
 		try {
-			t1.join();
-			t2.join();
-			t3.join();
+			row1.join();
+			row2.join();
+			row3.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
